@@ -2,37 +2,36 @@
 
 namespace App\Controller;
 
-
-use App\Service\User;
+//src/Controller/UserController.php
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 class BobiTeach extends AbstractController
 {
+
     #[Route(path: '/')]
     public function users(): Response
     {
-        $usersparams = new User(
-                'vaim',
-                'veselov',
-                'vladimirovich',
-                '@mail.ru',
-                'chumba',
-                '123321'
-        );
+        $userFirstName = 'Boba';
+        $userNotifications = ['y', 'n'];
 
-        return new Response('<H2>User:</H2>name: ' .$usersparams->getName().
-                                    '<br> surname: ' .$usersparams->getSurname().
-                                    '<br> patronymic: ' .$usersparams->getPatronymic().
-                                    '<br> email: ' .$usersparams->getEmail().
-                                    '<br> login: ' .$usersparams->getLogin().
-                                    '<br> password: ' .$usersparams->getPassword());
 
+       return $this->render('@templates\index.html.twig', [
+        'user_first_name' => $userFirstName,
+        'notifications' => $userNotifications,
+    ]);
     }
+
 
 }
 
-
-
+/**
+ * TODO: трейты trait
+ * TODO: twig шаблонизатор
+ * TODO: работа с базой данных в symfony и конфигурация doctrine в symfony
+ * TODO: подключение новых пакетов через composer
+ * Дополнительно
+ * TODO: Почитать про ParamConverter в symfony
+ * TODO: Почитать про doctrine
+ */

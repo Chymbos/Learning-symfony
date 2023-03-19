@@ -7,5 +7,8 @@
 /public/bundles/
 /var/
 /vendor/
-/.idea
+/.idea/
+/.symfony5
+/.env
+/.symfony.lock
 ###< symfony/framework-bundle ###
