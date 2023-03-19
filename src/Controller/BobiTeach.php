@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-//src/Controller/UserController.php
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,14 +15,11 @@ class BobiTeach extends AbstractController
         $userFirstName = 'Boba';
         $userNotifications = ['y', 'n'];
 
-
        return $this->render('@templates\index.html.twig', [
         'user_first_name' => $userFirstName,
         'notifications' => $userNotifications,
     ]);
     }
-
-
 }
 
 /**
